@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html> <head><title>업로드테스트</title></head>
+	<body>
+		<!-- 반드시 반드시 enctype="multipart/form-data" 이어야 함-->
+		<form enctype="multipart/form-data" action="01_upload2.php" method="post">
+			<!--php 변수를 간단히 한 01_upload2.php 로 걸어도 작동!-->
+			
+			<!-- 서버로 데이터는 전송되지만 보이지 않는 타입 맥스는 이파일보다 더 큰건 처리하지 않음.-->
+			<!-- 이 컨트롤은 맨 처음에 나와야 함 / 단위는 바이트 1키로바이트면 1024 1메가면 1024x1024-->
+			<input type="hidden" name="MAX_FILE_SIZE" value="10240000" />
+			
+			<input type="file" name="uuuserfile"/>
+			<input type="submit" value="upload btn"/>
+		</form>
+	</body>
+</html>
