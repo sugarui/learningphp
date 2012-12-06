@@ -3,7 +3,7 @@
 	 ini_set("display_errors","1");
 	 include_once('./01_db.php');
 	 
-	 $sql=" INSERT INTO`learn01` (`name`, `create`) values (\"seangco\", NOW() ) "; 
+	 $sql=" INSERT INTO`table01` (`name`, `create`) values (\"seangco\", NOW() ) "; 
 	 // 네임의 밸류는 꼭 ''로 싸줘야
 	 // 외따옴표 쿼리의 내부 인자에 이스케이핑 쌍따옴표를 할수없다.
 	 // 외따옴표 쿼리의 내부 인자에 이스케이핑 외따옴표를 쓸수있다.
@@ -17,7 +17,7 @@
 		$message .= 'query is : ' . $sql; //  이거 뭘까 이거..
 		die  ($message);
 	 }else{
-	 	$sql='SELECT * FROM `learn01` WHERE name=\'seangco\' ORDER BY id DESC LIMIT 10';
+	 	$sql='SELECT * FROM `table01` WHERE name=\'seangco\' ORDER BY id DESC LIMIT 10';
 		// 위쪽  sql 은 이스케이핑 하는데 얘는 왜 안해도 괜찮을까
 		// 정확히 어떻게 안하냐면,
 		// 쌍따옴표 쿼리 내부에 이스케이핑안한 외따옴표 쓰면 괜찮다

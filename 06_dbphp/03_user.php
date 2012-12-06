@@ -2,7 +2,7 @@
 ini_set("display_errors","1");
 include_once('./01_db.php');
 if(!empty($_POST['aaa'])){
-$sql = 'INSERT INTO `learn01` (`name`, `create`) VALUES (\' '.mysql_real_escape_string($_POST['aaa']).' \', NOW())';	
+$sql = 'INSERT INTO `table01` (`name`, `create`) VALUES (\' '.mysql_real_escape_string($_POST['aaa']).' \', NOW())';	
 $result=mysql_query($sql);
 if(!$result){
 	$message = 'error is :'.mysql_error()."\n";
@@ -18,7 +18,7 @@ if(!$result){
 	 		<input type="submit" />	 	 
 		</form>
 <?php
-	 $sql='SELECT * FROM `learn01` ORDER By id DESC LIMIT 10';
+	 $sql='SELECT * FROM `table01` ORDER By id DESC LIMIT 10';
 	 $result=mysql_query($sql);
 	 while($row=mysql_fetch_array($result)){
 	 	echo HTMLSPECIALCHARS( "{$row['id']} , {$row['name']} , {$row['create']}" )."<br/>";
